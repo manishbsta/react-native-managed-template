@@ -6,6 +6,10 @@ export const addItemToStorage = async (key: keyof typeof KEYS, value: any) => {
 	await SecureStore.setItemAsync(key, v);
 };
 
+export const getItemFromStorage = async (key: keyof typeof KEYS) => {
+	return await SecureStore.getItemAsync(key);
+};
+
 export const removeItemFromStorage = async (key: keyof typeof KEYS) => {
 	await SecureStore.deleteItemAsync(key);
 };
