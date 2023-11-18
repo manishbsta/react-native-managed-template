@@ -8,7 +8,7 @@ const MainStack = () => {
   return (
     <Navigator>
       <Screen
-        name="home"
+        name='home'
         component={HomeScreen}
       />
     </Navigator>

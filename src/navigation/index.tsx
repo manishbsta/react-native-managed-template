@@ -34,12 +34,12 @@ const RootNavigation = () => {
     <Navigator screenOptions={{ headerShown: false }}>
       {token ? (
         <Screen
-          name="main_stack"
+          name='main_stack'
           component={MainStack}
         />
       ) : (
         <Screen
-          name="login"
+          name='login'
           component={LoginScreen}
         />
       )}

@@ -10,7 +10,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   return (
     <StoreProvider store={store}>
-      <StatusBar style="auto" />
+      <StatusBar style='auto' />
       <NavigationContainer>
         <RootNavigation />
       </NavigationContainer>
