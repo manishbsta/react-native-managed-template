@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
-import * as SplashScreen from 'expo-splash-screen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as SplashScreen from 'expo-splash-screen';
+import React, { useEffect } from 'react';
 
 import MainStack from './MainStack';
-import LoginScreen from '../screens/LoginScreen';
-
 import { RootStackParams } from './_types';
+import LoginScreen from '../screens/LoginScreen';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { setToken } from '../store/slices/auth.slice';
 import { getItemFromStorage } from '../utils/expo-secure-store';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 const { Screen, Navigator } = createNativeStackNavigator<RootStackParams>();
 const RootNavigation = () => {

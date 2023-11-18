@@ -3,6 +3,7 @@ import {
   configureStore,
   PayloadAction,
 } from '@reduxjs/toolkit';
+
 import { authReducer } from './slices/auth.slice';
 
 const combinedReducer = combineReducers({
