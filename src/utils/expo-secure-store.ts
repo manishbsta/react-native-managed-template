@@ -1,10 +1,7 @@
 import * as SecureStore from 'expo-secure-store';
 import { KEYS } from '../core/constants/storage-keys';
 
-export const addItemToStorage = async (
-  key: keyof typeof KEYS,
-  value: unknown,
-) => {
+export const addItemToStorage = async (key: keyof typeof KEYS, value: any) => {
   const v = typeof value === 'string' ? value : JSON.stringify(value);
   await SecureStore.setItemAsync(key, v);
 };
