@@ -8,12 +8,12 @@ import { store } from './src/store';
 
 SplashScreen.preventAutoHideAsync();
 export default function App() {
-	return (
-		<StoreProvider store={store}>
-			<StatusBar style='auto' />
-			<NavigationContainer>
-				<RootNavigation />
-			</NavigationContainer>
-		</StoreProvider>
-	);
+  return (
+    <StoreProvider store={store}>
+      <StatusBar style="auto" />
+      <NavigationContainer>
+        <RootNavigation />
+      </NavigationContainer>
+    </StoreProvider>
+  );
 }

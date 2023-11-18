@@ -12,33 +12,39 @@ import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 const { Screen, Navigator } = createNativeStackNavigator<RootStackParams>();
 const RootNavigation = () => {
-	const dispatch = useAppDispatch();
-	const { token } = useAppSelector((s) => s.auth);
+  const dispatch = useAppDispatch();
+  const { token } = useAppSelector((s) => s.auth);
 
-	useEffect(() => {
-		getDataFromStorage();
+  useEffect(() => {
+    getDataFromStorage();
 
-		const timeout = setTimeout(() => {
-			SplashScreen.hideAsync();
-		}, 2500);
+    const timeout = setTimeout(() => {
+      SplashScreen.hideAsync();
+    }, 2500);
 
-		return () => clearTimeout(timeout);
-	}, []);
+    return () => clearTimeout(timeout);
+  }, []);
 
-	const getDataFromStorage = async () => {
-		const accessToken = await getItemFromStorage('token');
-		if (accessToken) dispatch(setToken(accessToken));
-	};
+  const getDataFromStorage = async () => {
+    const accessToken = await getItemFromStorage('token');
+    if (accessToken) dispatch(setToken(accessToken));
+  };
 
-	return (
-		<Navigator screenOptions={{ headerShown: false }}>
-			{token ? (
-				<Screen name='main_stack' component={MainStack} />
-			) : (
-				<Screen name='login' component={LoginScreen} />
-			)}
-		</Navigator>
-	);
+  return (
+    <Navigator screenOptions={{ headerShown: false }}>
+      {token ? (
+        <Screen
+          name="main_stack"
+          component={MainStack}
+        />
+      ) : (
+        <Screen
+          name="login"
+          component={LoginScreen}
+        />
+      )}
+    </Navigator>
+  );
 };
 
 export default RootNavigation;

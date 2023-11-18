@@ -5,11 +5,14 @@ import { MainStackParams } from './_types';
 
 const { Screen, Navigator } = createNativeStackNavigator<MainStackParams>();
 const MainStack = () => {
-	return (
-		<Navigator>
-			<Screen name='home' component={HomeScreen} />
-		</Navigator>
-	);
+  return (
+    <Navigator>
+      <Screen
+        name="home"
+        component={HomeScreen}
+      />
+    </Navigator>
+  );
 };
 
 export default MainStack;

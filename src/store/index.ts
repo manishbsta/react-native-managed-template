@@ -1,5 +1,9 @@
-import {combineReducers, configureStore, PayloadAction} from '@reduxjs/toolkit';
-import {authReducer} from './slices/auth.slice';
+import {
+  combineReducers,
+  configureStore,
+  PayloadAction,
+} from '@reduxjs/toolkit';
+import { authReducer } from './slices/auth.slice';
 
 const combinedReducer = combineReducers({
   auth: authReducer,
