@@ -1,10 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { AuthState } from './types';
-import {
-  addItemToStorage,
-  clearSecureStorage,
-} from '../../utils/expo-secure-store';
+import { addItemToStorage, clearSecureStorage } from '../../utils/expo-secure-store';
 
 const initialState: AuthState = {
   token: undefined,

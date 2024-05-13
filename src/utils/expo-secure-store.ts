@@ -16,7 +16,7 @@ export const removeItemFromStorage = async (key: keyof typeof KEYS) => {
 };
 
 export const clearSecureStorage = async () => {
-  Object.keys(KEYS).forEach(async (key) => {
+  Object.keys(KEYS).forEach(async key => {
     await SecureStore.deleteItemAsync(key);
   });
 };
