@@ -21,7 +21,7 @@ const Home = () => {
     <View className='flex-1 items-center justify-center'>
       <TouchableOpacity
         onPress={handleLogOut}
-        className='bg-red-500 p-4 rounded-lg px-10'>
+        className='rounded-lg bg-red-500 p-4 px-10'>
         <Text className='text-white'>Log Out</Text>
       </TouchableOpacity>
     </View>

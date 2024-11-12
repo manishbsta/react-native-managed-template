@@ -19,10 +19,10 @@ const Login = () => {
   };
 
   return (
-    <SafeAreaView className='flex-1 justify-center items-center'>
+    <SafeAreaView className='flex-1 items-center justify-center'>
       <TouchableOpacity
         onPress={handleLogin}
-        className='bg-blue-500 p-4 rounded-lg px-10'>
+        className='rounded-lg bg-blue-500 p-4 px-10'>
         <Text className='text-white'>Login</Text>
       </TouchableOpacity>
     </SafeAreaView>
