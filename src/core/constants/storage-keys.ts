@@ -1,4 +1,3 @@
-// key & value should be same string
-export const KEYS = {
-  token: 'token',
-};
+export enum StorageKeys {
+  TOKEN = 'accessToken',
+}

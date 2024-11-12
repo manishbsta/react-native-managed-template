@@ -1,27 +1,20 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
+import { clearSecureStorage } from '@src/utils/expo-secure-store';
 import { AuthState } from './types';
-import { addItemToStorage, clearSecureStorage } from '../../utils/expo-secure-store';
 
-const initialState: AuthState = {
-  token: undefined,
-};
+const initialState: AuthState = {};
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setToken: (state, action: PayloadAction<string>) => {
-      state.token = action.payload;
-      addItemToStorage('token', action.payload);
-    },
-
     logOut: () => {
       clearSecureStorage();
     },
   },
 });
 
-export const { setToken, logOut } = authSlice.actions;
+export const { logOut } = authSlice.actions;
 
 export const authReducer = authSlice.reducer;
