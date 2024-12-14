@@ -1,1 +1,3 @@
-export type AuthState = {};
+export type AppState = {
+  loading: boolean;
+};

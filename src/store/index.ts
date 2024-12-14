@@ -1,13 +1,13 @@
 import { combineReducers, configureStore, PayloadAction } from '@reduxjs/toolkit';
 
-import { authReducer } from './slices/auth.slice';
+import { appReducer } from './slices/app.slice';
 
 const combinedReducer = combineReducers({
-  auth: authReducer,
+  app: appReducer,
 });
 
 const rootReducer = (state: any, action: PayloadAction) => {
-  if (action.type === 'auth/logOut') {
+  if (action.type === 'app/clearStorage') {
     state = undefined;
   }
 
