@@ -1,3 +1,4 @@
 export const Images = {
-  logo: require('./icon.png'),
+  logo: require('../icons/icon.png'),
+  mindMap: require('./mind-map.png'),
 };

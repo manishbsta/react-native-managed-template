@@ -1,22 +1,17 @@
-import { combineReducers, configureStore, PayloadAction } from '@reduxjs/toolkit';
+import { proxy, useSnapshot } from 'valtio';
 
-import { authReducer } from './slices/auth.slice';
+interface GlobalState {
+  sessionExpired: boolean;
+}
 
-const combinedReducer = combineReducers({
-  auth: authReducer,
-});
-
-const rootReducer = (state: any, action: PayloadAction) => {
-  if (action.type === 'auth/logOut') {
-    state = undefined;
-  }
-
-  return combinedReducer(state, action);
+export const initialState: GlobalState = {
+  sessionExpired: false,
 };
 
-export const store = configureStore({
-  reducer: rootReducer,
-});
+export const store = proxy<GlobalState>({ ...initialState });
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+// Custom hook to access the store
+export const useGlobalSnapshot = () => {
+  const snapshot = useSnapshot(store);
+  return snapshot;
+};

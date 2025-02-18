@@ -1,18 +1,22 @@
 # react-native-managed-template
 
-A React Native Expo starter template project with built-in navigation with `expo-router` &amp; state management with `redux toolkit`.
+A React Native Expo starter template project with built-in navigation with `expo-router` &amp; state management with `valtio`.
 
 ## What's included?
 
-- expo-router
-- axios with interceptors
-- @reduxjs/toolkit {and peer dependencies}
-- nativewind for styling
-- utility functions for expo-secure-store
+- Navigation with Expo-router
+- Axios with Interceptors
+- Valtio for Global State Management
+- Unistyles for Styling
+- VsCode snippets for Screens and Components
+- Custom Fonts
+- Utility Functions and Configs
 
 ## Why should I use this template?
 
 - Splash Screen & Authentication flow
-- Pre-setup navigation and redux toolkit
+- Light & Dark Themes
+- Styled Components
+- Pre-setup navigation and valtio
 - Eslint & Prettier preconfigured to work together
 - Actively maintained
