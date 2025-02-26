@@ -2,7 +2,7 @@
   "ReactNativeBroilerplateComponent": {
     "prefix": "rnbc",
     "body": [
-      "import { StyledText } from '@src/components/StyledText';",
+      "import { StyledText } from '@src/components/_styled/StyledText';",
       "import React from 'react';",
       "import { View } from 'react-native';",
       "import { StyleSheet } from 'react-native-unistyles';",
@@ -32,7 +32,7 @@
   "ReactNativeBroilerplateScreen": {
     "prefix": "rnbs",
     "body": [
-      "import { StyledText } from '@src/components/StyledText';",
+      "import { StyledText } from '@src/components/_styled/StyledText';",
       "import { useRouter } from 'expo-router';",
       "import React from 'react';",
       "import { ScrollView } from 'react-native';",
