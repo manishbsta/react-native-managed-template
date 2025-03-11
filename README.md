@@ -4,11 +4,11 @@ A React Native Expo starter template project with built-in navigation with `expo
 
 ## What's included?
 
-- Navigation with Expo-router
+- Navigation with Expo Router
 - Axios with Interceptors
 - Valtio for Global State Management
 - Unistyles for Styling
-- VsCode snippets for Screens and Components
+- VS Code snippets for Screens and Components
 - Custom Fonts
 - Utility Functions and Configs
 
