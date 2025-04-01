@@ -65,6 +65,14 @@ export default (context: ConfigContext): ExpoConfig => ({
       },
     ],
     [
+      'expo-build-properties',
+      {
+        ios: {
+          deploymentTarget: '16.6',
+        },
+      },
+    ],
+    [
       'expo-dev-client',
       {
         launchMode: 'most-recent',
