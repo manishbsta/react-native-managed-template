@@ -1,7 +1,9 @@
-export enum FontFamily {
-  light = 'RobotoSlab-Light',
-  regular = 'RobotoSlab-Regular',
-  medium = 'RobotoSlab-Medium',
-  semibold = 'RobotoSlab-SemiBold',
-  bold = 'RobotoSlab-Bold',
-}
+export const FONTS = {
+  Rubik: require('@/assets/fonts/Rubik-Regular.ttf'),
+  RubikLight: require('@/assets/fonts/Rubik-Light.ttf'),
+  RubikMedium: require('@/assets/fonts/Rubik-Medium.ttf'),
+  RubikSemiBold: require('@/assets/fonts/Rubik-SemiBold.ttf'),
+  RubikBold: require('@/assets/fonts/Rubik-Bold.ttf'),
+};
+
+export type FontFamily = keyof typeof FONTS;

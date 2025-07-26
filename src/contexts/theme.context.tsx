@@ -1,8 +1,8 @@
-import { StorageKeys } from '@src/constants/storage-keys';
-import { mmkv } from '@src/utils/mmkv';
-import { AppTheme } from '@src/utils/unistyles';
+import { StorageKeys } from '@/constants/storage-keys';
+import { SecureStore } from '@/lib/secure-store';
 import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
 import { UnistylesRuntime } from 'react-native-unistyles';
+import { AppTheme } from '../unistyles';
 
 // Define the type for the context value
 interface ThemeContextType {
@@ -21,7 +21,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<AppTheme>('light');
 
   useEffect(() => {
-    const theme = mmkv.getString(StorageKeys.APP_THEME);
+    const theme = SecureStore.getItem(StorageKeys.THEME);
     if (theme) {
       const appTheme = theme as AppTheme;
       setTheme(appTheme);
@@ -31,7 +31,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const updateTheme = (theme: AppTheme) => {
     setTheme(theme);
     UnistylesRuntime.setTheme(theme);
-    mmkv.set(StorageKeys.APP_THEME, theme);
+    SecureStore.setItem(StorageKeys.THEME, theme);
   };
 
   return (
@@ -44,7 +44,6 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
     </ThemeContext.Provider>
   );
 };
-
 // Create a custom hook to use the ThemeContext
 export const useThemeContext = () => {
   const context = useContext(ThemeContext);

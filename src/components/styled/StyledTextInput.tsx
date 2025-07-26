@@ -12,7 +12,7 @@ interface StyledTextInputProps extends TextInputProps {
   rightIcon?: ComponentProps<typeof Icon>['name'];
 }
 
-const StyledTextInput: React.FC<StyledTextInputProps> = ({
+export const StyledTextInput: React.FC<StyledTextInputProps> = ({
   label,
   error,
   leftIcon,
@@ -82,5 +82,3 @@ const styles = StyleSheet.create(({ colors, fonts }) => ({
     color: colors.error,
   },
 }));
-
-export default StyledTextInput;

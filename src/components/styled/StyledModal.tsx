@@ -11,7 +11,7 @@ export type StyledModalProps = PropsWithChildren & {
   titleStyle?: TextStyle;
   dissmissable?: boolean;
 };
-const StyledModal: FC<StyledModalProps> = ({
+export const StyledModal: FC<StyledModalProps> = ({
   visible,
   onClose,
   title,
@@ -54,8 +54,6 @@ const StyledModal: FC<StyledModalProps> = ({
     </BaseModal>
   );
 };
-
-export default StyledModal;
 
 const styles = StyleSheet.create(({ colors }) => ({
   container: {

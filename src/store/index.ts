@@ -1,17 +1,32 @@
-import { proxy, useSnapshot } from 'valtio';
+import { create } from 'zustand';
 
-interface GlobalState {
-  sessionExpired: boolean;
+interface State {
+  state1: string;
+  state2: number;
 }
 
-export const initialState: GlobalState = {
-  sessionExpired: false,
+interface Actions {
+  setState1: (state1: string) => void;
+  setState2: (state2: number) => void;
+  resetStore: () => void;
+}
+
+type Store = State & Actions;
+
+const initialState: State = {
+  state1: 'state1',
+  state2: 0,
 };
 
-export const store = proxy<GlobalState>({ ...initialState });
-
-// Custom hook to access the store
-export const useGlobalSnapshot = () => {
-  const snapshot = useSnapshot(store);
-  return snapshot;
-};
+export const useGlobalStore = create<Store>()(set => ({
+  ...initialState,
+  setState1: state1 => {
+    set({ state1 });
+  },
+  setState2: state2 => {
+    set({ state2 });
+  },
+  resetStore: () => {
+    set({ ...initialState });
+  },
+}));

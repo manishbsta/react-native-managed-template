@@ -1,23 +1,22 @@
-import SettingsTile from '@src/components/Profile/SettingsTile';
-import { useAuthContext } from '@src/contexts/AuthContext';
-import { useThemeContext } from '@src/contexts/ThemeContext';
+import SettingsTile from '@/components/profile/SettingsTile';
+import { useAuthContext } from '@/contexts/auth.context';
+import { useThemeContext } from '@/contexts/theme.context';
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { StyleSheet, UnistylesRuntime } from 'react-native-unistyles';
+import { StyleSheet } from 'react-native-unistyles';
 
 const Profile = () => {
+  const { theme, updateTheme } = useThemeContext();
   const { logOut } = useAuthContext();
-  const { updateTheme } = useThemeContext();
-  const themeName = UnistylesRuntime.themeName;
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
         <SettingsTile
           label='Toggle Theme'
-          icon={themeName === 'light' ? 'sunny-outline' : 'moon'}
-          onPress={() => updateTheme(themeName === 'light' ? 'dark' : 'light')}
+          icon={theme === 'light' ? 'sunny-outline' : 'moon'}
+          onPress={() => updateTheme(theme === 'light' ? 'dark' : 'light')}
         />
         <SettingsTile label='Change Language' icon='language-outline' />
         <SettingsTile label='About Application' icon='information-circle-outline' />
@@ -29,7 +28,10 @@ const Profile = () => {
   );
 };
 
-const styles = StyleSheet.create(({ colors }) => ({
+const styles = StyleSheet.create(() => ({
+  container: {
+    flex: 1,
+  },
   contentContainer: {
     flex: 1,
     padding: 16,

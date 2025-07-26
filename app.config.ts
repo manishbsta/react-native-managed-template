@@ -39,36 +39,18 @@ export default (context: ConfigContext): ExpoConfig => ({
   },
   plugins: [
     'expo-router',
+    'expo-secure-store',
+    'react-native-edge-to-edge',
     [
       'expo-splash-screen',
       {
         imageWidth: 200,
         backgroundColor: '#f7f7f7',
-        image: './assets/icons/icon.png',
+        image: './assets/icons/splash-icon.png',
         dark: {
           imageWidth: 200,
           backgroundColor: '#f7f7f7',
-          image: './assets/icons/icon.png',
-        },
-      },
-    ],
-    [
-      'expo-font',
-      {
-        fonts: [
-          './assets/fonts/RobotoSlab-Light.ttf',
-          './assets/fonts/RobotoSlab-Regular.ttf',
-          './assets/fonts/RobotoSlab-Medium.ttf',
-          './assets/fonts/RobotoSlab-SemiBold.ttf',
-          './assets/fonts/RobotoSlab-Bold.ttf',
-        ],
-      },
-    ],
-    [
-      'expo-build-properties',
-      {
-        ios: {
-          deploymentTarget: '16.6',
+          image: './assets/icons/splash-icon.png',
         },
       },
     ],
@@ -81,5 +63,10 @@ export default (context: ConfigContext): ExpoConfig => ({
   ],
   experiments: {
     typedRoutes: true,
+  },
+  extra: {
+    eas: {
+      projectId: '4ab1b770-d403-4804-bbd3-2b9b26f1bda0',
+    },
   },
 });

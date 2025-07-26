@@ -1,26 +1,27 @@
-import { FontFamily } from '@assets/fonts';
+import { useThemeContext } from '@/contexts/theme.context';
 import { DarkTheme, DefaultTheme as LightTheme, type Theme } from '@react-navigation/native';
-import { useThemeContext } from '@src/contexts/ThemeContext';
-import { darkTheme, lightTheme } from '@src/utils/unistyles';
+import { darkTheme, lightTheme } from '../unistyles';
+import { fonts } from '../unistyles/tokens';
 
 const fontConfig: any = {
   regular: {
-    fontFamily: FontFamily.regular,
+    fontFamily: fonts.regular,
     fontWeight: 'normal',
   },
   medium: {
-    fontFamily: FontFamily.medium,
+    fontFamily: fonts.medium,
     fontWeight: 'normal',
   },
   bold: {
-    fontFamily: FontFamily.semibold,
+    fontFamily: fonts.bold,
     fontWeight: 'normal',
   },
   heavy: {
-    fontFamily: FontFamily.bold,
+    fontFamily: fonts.bold,
     fontWeight: 'normal',
   },
 };
+
 const useNavigationTheme = () => {
   const { theme } = useThemeContext();
 

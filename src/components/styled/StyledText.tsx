@@ -29,7 +29,7 @@ const styles = StyleSheet.create(({ colors, fonts }) => ({
         },
         title: {
           fontSize: 24,
-          fontFamily: fonts.semibold,
+          fontFamily: fonts.bold,
         },
         subtitle: {
           fontSize: 18,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create(({ colors, fonts }) => ({
         },
         caption: {
           fontSize: 13,
-          fontFamily: fonts.light,
+          fontFamily: fonts.thin,
         },
         default: {
           fontSize: 16,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create(({ colors, fonts }) => ({
       },
       fontWeight: {
         light: {
-          fontFamily: fonts.light,
+          fontFamily: fonts.thin,
         },
         regular: {
           fontFamily: fonts.regular,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create(({ colors, fonts }) => ({
           fontFamily: fonts.medium,
         },
         semibold: {
-          fontFamily: fonts.semibold,
+          fontFamily: fonts.bold,
         },
         bold: {
           fontFamily: fonts.bold,

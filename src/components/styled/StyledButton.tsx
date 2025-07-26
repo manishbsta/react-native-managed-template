@@ -16,7 +16,7 @@ interface StyledButtonProps extends PropsWithVariants {
   iconPosition?: 'left' | 'right';
   icon?: ComponentProps<typeof Icon>['name'];
 }
-const StyledButton: React.FC<StyledButtonProps> = ({
+export const StyledButton: React.FC<StyledButtonProps> = ({
   title,
   icon,
   onPress,
@@ -107,5 +107,3 @@ const styles = StyleSheet.create(({ colors }) => ({
     color: colors.primary,
   },
 }));
-
-export default StyledButton;
