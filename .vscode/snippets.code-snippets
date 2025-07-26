@@ -2,7 +2,7 @@
   "ReactNativeBoilerplateComponent": {
     "prefix": "rnbc",
     "body": [
-      "import { StyledText } from '@/src/components/styled/StyledText';",
+      "import { StyledText } from '@/components/styled/StyledText';"
       "import React from 'react';",
       "import { View } from 'react-native';",
       "import { StyleSheet } from 'react-native-unistyles';",
@@ -32,7 +32,7 @@
   "ReactNativeBoilerplateScreen": {
     "prefix": "rnbs",
     "body": [
-      "import { StyledText } from '@/src/components/styled/StyledText';",
+      "import { StyledText } from '@/components/styled/StyledText';",
       "import { useRouter } from 'expo-router';",
       "import React from 'react';",
       "import { ScrollView } from 'react-native';",
