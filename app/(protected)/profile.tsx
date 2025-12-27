@@ -1,4 +1,4 @@
-import SettingsTile from '@/components/profile/SettingsTile';
+import SettingsTile from '@/components/Profile/SettingsTile';
 import { useAuthContext } from '@/contexts/auth.context';
 import { useThemeContext } from '@/contexts/theme.context';
 import React from 'react';
